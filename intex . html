@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Salon | Professional Hair & Beauty Services in Jaipur</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            height: 100vh;
+            position: relative;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%),
+                        url('https://images.unsplash.com/photo-1607003556991-64351f56ebc2?auto=format&fit=crop&w=2000&q=80');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(198,124,78,0.4) 100%);
+            backdrop-filter: blur(3px);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 950px;
+            padding: 30px;
+            color: white;
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tagline {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #1a1a1a;
+            font-size: 14px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            font-weight: 300;
+            margin-bottom: 15px;
+            color: #e0e0e0;
+            letter-spacing: 0.5px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 35px;
+            line-height: 1.8;
+            color: #d0d0d0;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-book, .btn-whatsapp {
+            padding: 16px 42px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 2px solid transparent;
+        }
+
+        .btn-book {
+            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            color: #1a1a1a;
+        }
+
+        .btn-book:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #20BA5A 100%);
+            color: white;
+            border-color: white;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #f8f7f4 0%, #faf9f6 100%);
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 48px;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-weight: 900;
+        }
+
+        .section-title p {
+            font-size: 16px;
+            color: #777;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid #d4af37;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials .section-title h2,
+        .testimonials .section-title p {
+            color: white;
+        }
+
+        .testimonials .section-title p {
+            color: #ccc;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            background: rgba(212, 175, 55, 0.15);
+            border-color: #d4af37;
+        }
+
+        .stars {
+            color: #f4d03f;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .customer-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .customer-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #1a1a1a;
+            font-size: 20px;
+        }
+
+        .customer-name {
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .customer-title {
+            font-size: 13px;
+            color: #aaa;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-section h2 {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            padding: 16px 42px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-btn-primary {
+            background: #1a1a1a;
+            color: #f4d03f;
+            border: 2px solid #1a1a1a;
+        }
+
+        .cta-btn-primary:hover {
+            background: transparent;
+            color: #1a1a1a;
+        }
+
+        .cta-btn-secondary {
+            background: transparent;
+            color: #1a1a1a;
+            border: 2px solid #1a1a1a;
+        }
+
+        .cta-btn-secondary:hover {
+            background: #1a1a1a;
+            color: #f4d03f;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 3px solid #d4af37;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .footer-item {
+            font-size: 15px;
+        }
+
+        .footer-item strong {
+            color: #d4af37;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .footer-copy {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-book, .btn-whatsapp {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .section-title h2 {
+                font-size: 36px;
+            }
+
+            .cta-section h2 {
+                font-size: 36px;
+            }
+
+            .footer-info {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+            <span class="tagline">✨ LUXURY BEAUTY SALON SINCE 2019</span>
+
+            <h1>Transform Your Beauty<br>With Confidence & Glow</h1>
+
+            <p class="subtitle">Award-Winning Hair & Beauty Expertise</p>
+
+            <p>
+                Professionally trained stylists by Orane Academy. Specializing in expert haircuts, 
+                premium hair treatments, rejuvenating facials, bridal makeup, and comprehensive skin 
+                care services. Your beauty transformation starts here in Mansarovar, Jaipur.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="tel:+919664164936" class="btn-book">📞 Book Appointment</a>
+                <a href="https://wa.me/919664164936" class="btn-whatsapp">💬 WhatsApp Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES SECTION ===== -->
+    <section class="services">
+        <div class="services-container">
+            <div class="section-title">
+                <h2>Our Premium Services</h2>
+                <p>Discover our range of professional beauty treatments designed to enhance your natural beauty</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">✂️</div>
+                    <h3>Expert Haircuts</h3>
+                    <p>Precision cuts tailored to your face shape and style preferences. We create timeless looks that enhance your natural features.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💆</div>
+                    <h3>Hair Treatments</h3>
+                    <p>Premium hair spa, keratin treatments, and color services using high-quality international products for lustrous, healthy hair.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Facials & Skincare</h3>
+                    <p>Rejuvenating facials with advanced techniques and organic products. Deep cleansing, hydration, and anti-aging treatments.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💄</div>
+                    <h3>Bridal Makeup</h3>
+                    <p>Stunning bridal looks that capture your personality and withstand all-day celebrations. Professional makeup for all occasions.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">💅</div>
+                    <h3>Nail Art</h3>
+                    <p>Creative nail designs and manicure services using premium products. From classic to trendy, we have it all.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">👑</div>
+                    <h3>Premium Grooming</h3>
+                    <p>Complete grooming packages for special occasions. Threading, waxing, and personalized beauty consultation included.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS SECTION ===== -->
+    <section class="testimonials">
+        <div class="testimonials-container">
+            <div class="section-title">
+                <h2>Love From Our Clients</h2>
+                <p>Thousands of satisfied customers have experienced our exceptional service and transformation</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"The team is incredibly professional! My wedding makeup was perfect and lasted the entire day. Highly recommended!"</p>
+                    <div class="customer-info">
+                        <div class="customer-avatar">A</div>
+                        <div>
+                            <div class="customer-name">Anjali Sharma</div>
+                            <div class="customer-title">Bride, 2024</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Best haircut and color treatment I've ever had! The stylist understood exactly what I wanted. Will definitely come back!"</p>
+                    <div class="customer-info">
+                        <div class="customer-avatar">P</div>
+                        <div>
+                            <div class="customer-name">Priya Verma</div>
+                            <div class="customer-title">Regular Customer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"The facial treatment transformed my skin! Staff is so welcoming and the ambiance is absolutely luxurious. Worth every penny!"</p>
+                    <div class="customer-info">
+                        <div class="customer-avatar">R</div>
+                        <div>
+                            <div class="customer-name">Radhika Patel</div>
+                            <div class="customer-title">Skincare Enthusiast</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Professional, hygienic, and affordable! The team makes you feel pampered. I visit every month for my grooming needs."</p>
+                    <div class="customer-info">
+                        <div class="customer-avatar">N</div>
+                        <div>
+                            <div class="customer-name">Neha Singh</div>
+                            <div class="customer-title">Monthly Member</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Orane Academy trained professionals! You can see the expertise in every service. Love the attention to detail!"</p>
+                    <div class="customer-info">
+                        <div class="customer-avatar">S</div>
+                        <div>
+                            <div class="customer-name">Shweta Desai</div>
+                            <div class="customer-title">Corporate Client</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"The best salon in Mansarovar! Friendly staff, clean environment, and amazing results. Highly recommended to all!"</p>
+                    <div class="customer-info">
+                        <div class="customer-avatar">M</div>
+                        <div>
+                            <div class="customer-name">Meera Nair</div>
+                            <div class="customer-title">Loyal Customer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Glow?</h2>
+            <p>Book your appointment today and experience luxury beauty care in Mansarovar, Jaipur</p>
+            <div class="cta-buttons">
+                <a href="tel:+919664164936" class="cta-btn cta-btn-primary">Call Now</a>
+                <a href="https://wa.me/919664164936" class="cta-btn cta-btn-secondary">WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-item">
+                    <strong>📞 Phone</strong>
+                    +91 96641 64936
+                </div>
+                <div class="footer-item">
+                    <strong>📍 Location</strong>
+                    Mansarovar, Jaipur
+                </div>
+                <div class="footer-item">
+                    <strong>⭐ Since</strong>
+                    2019
+                </div>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2024 Luxe Salon. Professional Beauty Care | Orane Academy Trained Stylists</p>
+                <p style="margin-top: 10px; font-size: 12px;">All Rights Reserved | Crafted with ❤️ for Beauty</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
